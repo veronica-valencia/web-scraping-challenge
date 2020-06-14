@@ -18,8 +18,7 @@ def scrape():
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
 
-    listings["headline"] = soup.find("a", class_="result-title").get_text()
-    listings["price"] = soup.find("span", class_="result-price").get_text()
-    listings["hood"] = soup.find("span", class_="result-hood").get_text()
+    listings["headline"] = soup.find("a", class_="content_title").get_text()
+    listings["para"] = soup.find("span", class_="article_teaser_body").get_text()
 
     return listings

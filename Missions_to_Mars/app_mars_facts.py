@@ -21,7 +21,7 @@ def index():
 @app.route("/scrape")
 def scraper():
     listings = mongo.db.listings
-    listings_data = scrape.scrape()
+    listings_data = mission_to_mars.scrape_all()
     listings.update({}, listings_data, upsert=True)
     return redirect("/", code=302)
 
